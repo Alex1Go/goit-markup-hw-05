@@ -68,6 +68,7 @@ body {
 }
 
 .menu-link {
+    position: relative;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -77,8 +78,24 @@ body {
     display: block;
     padding-top: 24px;
     padding-bottom: 24px;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.menu-link.current::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: var(--color-hover-focus);
+    border-radius: 2px;
+    bottom: -1px;
+    left: 0;
+
+}
 
 .menu-contact {
     font-size: 16px;
@@ -88,6 +105,10 @@ body {
     font-style: normal;
     padding-top: 24px;
     padding-bottom: 24px;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-link:hover,
@@ -95,6 +116,7 @@ body {
 .current {
     color: var(--color-hover-focus);
 }
+
 
 .menu-contact:hover,
 .menu-contact:focus {
@@ -167,6 +189,10 @@ body {
     border-radius: 4px;
     border: none;
     min-width: 169px;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -224,9 +250,9 @@ body {
     color: var(--color-adress-p);
 }
 
-/* ========== /Feature Section ==========*/
+/* ===== /Feature Section =====*/
 
-/* ============ Promo Section ============*/
+/* ===== Promo Section =====*/
 .promo {
     padding-bottom: 120px;
 }
@@ -250,9 +276,9 @@ body {
     margin-bottom: 72px;
 }
 
-/* ============ /Promo Section ===========*/
+/* ===== /Promo Section =====*/
 
-/* ============ Team Section =============*/
+/* ===== Team Section =====*/
 .team {
     background-color: var(--color-back-fonteam-logo2-pmenubtn);
     padding-top: 120px;
@@ -313,6 +339,10 @@ body {
     height: 40px;
     border-radius: 50%;
     background-color: var(--color-logo-btn-pmenu);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .team-soc-link:hover,
@@ -321,10 +351,10 @@ body {
 }
 
 .team-soc-svg {
-    fill: #F4F4FD;
+    fill: var(--color-back-fonteam-logo2-pmenubtn);
 }
 
-/* ====== /Team Section ======*/
+/* ===== /Team Section =====*/
 
 /* ===== Customers ===== */
 .customers {
@@ -356,6 +386,9 @@ body {
     fill: #8E8F99;
     border: 1px solid #8E8F99;
     border-radius: 4px;
+    transition-property: fill, border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cust-link:hover,
@@ -367,7 +400,7 @@ body {
 /* ===== /Customers ===== */
 
 
-/* ========== Footer ===========*/
+/* ===== Footer =====*/
 .footer {
     background-color: var(--color-menu-h);
     padding-top: 100px;
@@ -425,9 +458,11 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    fill: #F4F4FD;
+    fill: var(--color-back-fonteam-logo2-pmenubtn);
     background-color: rgba(255, 255, 255, 0.1);
-
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -436,7 +471,7 @@ body {
     background-color: #31D0AA;
 }
 
-/* ========== /Footer ===========*/
+/* ===== /Footer =====*/
 
 /* ===== PORTFOLIO PAGE ===== */
 .menu-filter {
@@ -465,8 +500,12 @@ body {
     color: var(--color-logo-btn-pmenu);
     background-color: var(--color-back-fonteam-logo2-pmenubtn);
     border-radius: 4px;
-    border: 1px solid #E7E9FC;
+    border: 1px solid var(--color-footer-text);
     padding: 12px 24px;
+    transition-property: background-color, color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .menu-filter-btn:hover,
@@ -486,6 +525,9 @@ body {
 
 .list-item .link {
     display: block;
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-item .link:hover,
@@ -510,7 +552,7 @@ body {
 
 .img-text {
     padding: 32px 16px;
-    border: 1px solid #E7E9FC;
+    border: 1px solid var(--color-footer-text);
     border-top: 0;
     margin-right: 0;
 }
@@ -530,4 +572,98 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--color-adress-p);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    transform: translate(0, 100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-back-fonteam-logo2-pmenubtn);
+    background-color: var(--color-logo-btn-pmenu);
+    padding: 40px 32px;
+
+}
+
+.overlay-block {
+    position: relative;
+    overflow: hidden;
+}
+
+.list-img .link:hover .overlay,
+.list-img .link:focus .overlay {
+    transform: translate(0, 0);
+}
+
+/* ===== /PORTFOLIO PAGE ===== */
+
+
+/* ===== Modal ===== */
+.backdrop {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+    position: absolute;
+    width: 408px;
+    height: 576px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.btn-modal {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-footer-text);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-svg {
+    fill: #000000;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-modal:hover .modal-svg,
+.btn-modal:focus .modal-svg {
+    fill: var(--primary-fon-color);
+}
+
+.btn-modal:hover,
+.btn-modal:focus {
+    background-color: var(--color-hover-focus);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
